@@ -1,7 +1,7 @@
-import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
 
-import { CartProvider } from './cart';
+import { CartProvider } from "./cart";
 
 const AppProvider: React.FC = ({ children }) => {
   return (

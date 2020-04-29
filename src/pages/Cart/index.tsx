@@ -1,7 +1,6 @@
-import React, { useMemo } from 'react';
-import FeatherIcon from 'react-native-vector-icons/Feather';
-
-import { View } from 'react-native';
+import React, { useMemo } from "react";
+import FeatherIcon from "react-native-vector-icons/Feather";
+import { View } from "react-native";
 
 import {
   Container,
@@ -21,11 +20,13 @@ import {
   TotalProductsContainer,
   TotalProductsText,
   SubtotalValue,
-} from './styles';
+  EmptyCart,
+  EmptyCartText,
+} from "./styles";
 
-import { useCart } from '../../hooks/cart';
+import { useCart } from "../../hooks/cart";
 
-import formatValue from '../../utils/formatValue';
+import formatValue from "../../utils/formatValue";
 
 interface Product {
   id: string;
@@ -39,72 +40,90 @@ const Cart: React.FC = () => {
   const { increment, decrement, products } = useCart();
 
   function handleIncrement(id: string): void {
-    // TODO
+    increment(id);
   }
 
   function handleDecrement(id: string): void {
-    // TODO
+    decrement(id);
   }
 
   const cartTotal = useMemo(() => {
-    // TODO RETURN THE SUM OF THE QUANTITY OF THE PRODUCTS IN THE CART
+    const total = products.reduce(
+      (acumulator, { price, quantity }) => acumulator + price * quantity,
+      0,
+    );
 
-    return formatValue(0);
+    return formatValue(total);
   }, [products]);
 
   const totalItensInCart = useMemo(() => {
-    // TODO RETURN THE SUM OF THE QUANTITY OF THE PRODUCTS IN THE CART
+    const totalItens = products.reduce(
+      (acumulator, { quantity }) => acumulator + quantity,
+      0,
+    );
 
-    return 0;
+    return totalItens;
   }, [products]);
 
   return (
     <Container>
-      <ProductContainer>
-        <ProductList
-          data={products}
-          keyExtractor={item => item.id}
-          ListFooterComponent={<View />}
-          ListFooterComponentStyle={{
-            height: 80,
-          }}
-          renderItem={({ item }: { item: Product }) => (
-            <Product>
-              <ProductImage source={{ uri: item.image_url }} />
-              <ProductTitleContainer>
-                <ProductTitle>{item.title}</ProductTitle>
-                <ProductPriceContainer>
-                  <ProductSinglePrice>
-                    {formatValue(item.price)}
-                  </ProductSinglePrice>
+      {products.length ? (
+        <ProductContainer lenght={products.length}>
+          <ProductList
+            data={products}
+            keyExtractor={item => item.id}
+            ListFooterComponent={<View />}
+            ListFooterComponentStyle={{
+              height: 80,
+            }}
+            renderItem={({ item }: { item: Product }) => (
+              <Product>
+                <ProductImage source={{ uri: item.image_url }} />
+                <ProductTitleContainer>
+                  <ProductTitle>{item.title}</ProductTitle>
+                  <ProductPriceContainer>
+                    <ProductSinglePrice>
+                      {formatValue(item.price)}
+                    </ProductSinglePrice>
 
-                  <TotalContainer>
-                    <ProductQuantity>{`${item.quantity}x`}</ProductQuantity>
+                    <TotalContainer>
+                      <ProductQuantity>{`${item.quantity}x`}</ProductQuantity>
 
-                    <ProductPrice>
-                      {formatValue(item.price * item.quantity)}
-                    </ProductPrice>
-                  </TotalContainer>
-                </ProductPriceContainer>
-              </ProductTitleContainer>
-              <ActionContainer>
-                <ActionButton
-                  testID={`increment-${item.id}`}
-                  onPress={() => handleIncrement(item.id)}
-                >
-                  <FeatherIcon name="plus" color="#E83F5B" size={16} />
-                </ActionButton>
-                <ActionButton
-                  testID={`decrement-${item.id}`}
-                  onPress={() => handleDecrement(item.id)}
-                >
-                  <FeatherIcon name="minus" color="#E83F5B" size={16} />
-                </ActionButton>
-              </ActionContainer>
-            </Product>
-          )}
-        />
-      </ProductContainer>
+                      <ProductPrice>
+                        {formatValue(item.price * item.quantity)}
+                      </ProductPrice>
+                    </TotalContainer>
+                  </ProductPriceContainer>
+                </ProductTitleContainer>
+                <ActionContainer>
+                  <ActionButton
+                    testID={`increment-${item.id}`}
+                    onPress={() => handleIncrement(item.id)}
+                  >
+                    <FeatherIcon name="plus" color="#E83F5B" size={16} />
+                  </ActionButton>
+                  <ActionButton
+                    testID={`decrement-${item.id}`}
+                    onPress={() => handleDecrement(item.id)}
+                  >
+                    <FeatherIcon name="minus" color="#E83F5B" size={16} />
+                  </ActionButton>
+                </ActionContainer>
+              </Product>
+            )}
+          />
+        </ProductContainer>
+      ) : (
+        <View
+          style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
+        >
+          <EmptyCart>
+            <FeatherIcon name="shopping-cart" size={24} />
+            <EmptyCartText>Carrinho vazio</EmptyCartText>
+          </EmptyCart>
+        </View>
+      )}
+
       <TotalProductsContainer>
         <FeatherIcon name="shopping-cart" color="#fff" size={24} />
         <TotalProductsText>{`${totalItensInCart} itens`}</TotalProductsText>

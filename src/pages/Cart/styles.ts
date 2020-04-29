@@ -1,20 +1,24 @@
-import styled from 'styled-components/native';
-import { FlatList } from 'react-native';
+import styled from "styled-components/native";
+import { FlatList } from "react-native";
+
+interface ProductContainerProps {
+  lenght: number;
+}
 
 export const Container = styled.SafeAreaView`
   flex: 1;
   align-items: center;
 `;
 
-export const ProductContainer = styled.View`
+export const ProductContainer = styled.View<ProductContainerProps>`
   border-radius: 5px;
   margin-top: 60px;
   flex: 1;
-  flex-direction: row;
+  padding: ${props => (props.lenght === 1 ? "0 13.5" : "0")}px;
+  flex-direction: ${props => (props.lenght === 1 ? "row" : "column")};
 `;
 
 export const ProductList = styled(FlatList)`
-  flex: 1;
   padding: 0 10px;
 `;
 
@@ -39,6 +43,7 @@ export const ProductTitleContainer = styled.View`
 
 export const ProductTitle = styled.Text`
   font-size: 16px;
+  width: 200px;
 `;
 
 export const ProductPriceContainer = styled.View`
@@ -113,4 +118,14 @@ export const SubtotalValue = styled.Text`
   font-size: 16px;
   color: #fff;
   font-weight: bold;
+`;
+
+export const EmptyCart = styled.SafeAreaView`
+  flex-direction: row;
+  align-items: center;
+`;
+
+export const EmptyCartText = styled.Text`
+  font-size: 24px;
+  margin-left: 16px;
 `;
