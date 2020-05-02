@@ -1,5 +1,6 @@
 import styled from "styled-components/native";
 import { FlatList } from "react-native";
+import { lighten } from "polished";
 
 interface ProductContainerProps {
   lenght: number;
@@ -23,7 +24,7 @@ export const ProductList = styled(FlatList)`
 `;
 
 export const Product = styled.View`
-  background: #fff;
+  background: ${lighten(0.05, "#3d3d4d")};
   padding: 15px 10px;
   border-radius: 5px;
   margin: 5px;
@@ -44,6 +45,7 @@ export const ProductTitleContainer = styled.View`
 export const ProductTitle = styled.Text`
   font-size: 16px;
   width: 200px;
+  color: #ebeef8;
 `;
 
 export const ProductPriceContainer = styled.View`
@@ -87,7 +89,7 @@ export const ActionContainer = styled.View`
 `;
 
 export const ActionButton = styled.TouchableOpacity`
-  background: rgba(232, 63, 91, 0.1);
+  background: rgba(232, 63, 91, 0.3);
   border-radius: 5px;
   padding: 12px;
   margin-bottom: 5px;
@@ -128,4 +130,5 @@ export const EmptyCart = styled.SafeAreaView`
 export const EmptyCartText = styled.Text`
   font-size: 24px;
   margin-left: 16px;
+  color: #ebeef8;
 `;

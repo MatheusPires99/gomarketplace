@@ -1,14 +1,12 @@
-import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
+import React from "react";
+import { createStackNavigator } from "@react-navigation/stack";
+import FeatherIcon from "react-native-vector-icons/Feather";
+import { Image } from "react-native";
 
-import { Image } from 'react-native';
+import Logo from "../assets/logo.png";
 
-import FeatherIcon from 'react-native-vector-icons/Feather';
-
-import Dashboard from '../pages/Dashboard';
-import Cart from '../pages/Cart';
-
-import Logo from '../assets/logo.png';
+import Dashboard from "../pages/Dashboard";
+import Cart from "../pages/Cart";
 
 const App = createStackNavigator();
 
@@ -16,7 +14,7 @@ const AppRoutes: React.FC = () => (
   <App.Navigator
     screenOptions={{
       headerShown: true,
-      cardStyle: { backgroundColor: '#EBEEF8' },
+      cardStyle: { backgroundColor: "#3D3D4D" },
     }}
     initialRouteName="Dashboard"
   >
@@ -38,7 +36,9 @@ const AppRoutes: React.FC = () => (
           marginLeft: 20,
         },
 
-        headerBackImage: () => <FeatherIcon name="chevron-left" size={24} />,
+        headerBackImage: () => (
+          <FeatherIcon name="chevron-left" size={24} color="#ebeef8" />
+        ),
       }}
       name="Cart"
       component={Cart}

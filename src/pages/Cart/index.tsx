@@ -118,7 +118,7 @@ const Cart: React.FC = () => {
           style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
         >
           <EmptyCart>
-            <FeatherIcon name="shopping-cart" size={24} />
+            <FeatherIcon name="shopping-cart" size={24} color="#ebeef8" />
             <EmptyCartText>Carrinho vazio</EmptyCartText>
           </EmptyCart>
         </View>

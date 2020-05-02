@@ -2,26 +2,26 @@
   "products": [
     {
       "id": "123",
-      "title": "Tênis Nike Revolution",
-      "image_url": "https://static.netshoes.com.br/produtos/tenis-nike-revolution-5-masculino/26/HZM-1731-026/HZM-1731-026_zoom1.jpg?ts=1571078789&ims=326x, https://static.netshoes.com.br/produtos/tenis-nike-revolution-5-masculino/26/HZM-1731-026/HZM-1731-026_zoom1.jpg?ts=1571078789&ims=652x",
+      "title": "Tênis Nike",
+      "image_url": "https://ik.imagekit.io/hwyksvj4iv/tenis_OD0rJFevi.jpg",
       "price": 250
     },
     {
       "id": "1234",
-      "title": "Moletom New Era",
-      "image_url": "https://static.netshoes.com.br/produtos/moletom-new-era-canguru-aberto-branded-masculino/34/IJX-7774-034/IJX-7774-034_zoom1.jpg?ts=1587730898&ims=326x",
+      "title": "Moletom Adidas",
+      "image_url": "https://ik.imagekit.io/hwyksvj4iv/moleton_4EMR7nGW5.jpg",
       "price": 200
     },
     {
       "id": "12345",
-      "title": "Tênis Nike SB Charge",
-      "image_url": "https://static.netshoes.com.br/produtos/tenis-nike-sb-charge-canvas/56/HZM-2998-056/HZM-2998-056_zoom1.jpg?ts=1582026903&ims=326x",
+      "title": "Boné Serafine",
+      "image_url": "https://ik.imagekit.io/hwyksvj4iv/bone_68tFL72P8.jpg",
       "price": 300
     },
     {
       "id": "123456",
       "title": "Camiseta Pica Pau Dragao Reserva",
-      "image_url": "https://static.netshoes.com.br/produtos/camiseta-pica-pau-dragao-reserva-masculina/14/B67-1709-014/B67-1709-014_zoom1.jpg",
+      "image_url": "https://ik.imagekit.io/hwyksvj4iv/blusa_Lp1hVPbbG.jpg",
       "price": 130
     }
   ]
