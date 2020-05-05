@@ -3,26 +3,26 @@
     {
       "id": "123",
       "title": "Tênis Nike",
-      "image_url": "https://ik.imagekit.io/hwyksvj4iv/tenis_OD0rJFevi.jpg",
-      "price": 250
+      "image_url": "https://ik.imagekit.io/hwyksvj4iv/tenis_dDPfbz0Qb.jpg",
+      "price": 300
     },
     {
       "id": "1234",
       "title": "Moletom Adidas",
-      "image_url": "https://ik.imagekit.io/hwyksvj4iv/moleton_4EMR7nGW5.jpg",
+      "image_url": "https://ik.imagekit.io/hwyksvj4iv/moletom_I61McHzKN.jpg",
       "price": 200
     },
     {
       "id": "12345",
-      "title": "Boné Serafine",
-      "image_url": "https://ik.imagekit.io/hwyksvj4iv/bone_68tFL72P8.jpg",
+      "title": "Camiseta Reserva",
+      "image_url": "https://ik.imagekit.io/hwyksvj4iv/camiseta_1YbQlg3tS.jpg",
       "price": 300
     },
     {
       "id": "123456",
-      "title": "Camiseta Pica Pau Dragao Reserva",
-      "image_url": "https://ik.imagekit.io/hwyksvj4iv/blusa_Lp1hVPbbG.jpg",
-      "price": 130
+      "title": "Boné Serafine",
+      "image_url": "https://ik.imagekit.io/hwyksvj4iv/bone_qYJePy51C.png",
+      "price": 300
     }
   ]
 }

@@ -14,7 +14,7 @@ const AppRoutes: React.FC = () => (
   <App.Navigator
     screenOptions={{
       headerShown: true,
-      cardStyle: { backgroundColor: "#3D3D4D" },
+      cardStyle: { backgroundColor: "#F0F0F5" },
     }}
     initialRouteName="Dashboard"
   >
@@ -37,7 +37,7 @@ const AppRoutes: React.FC = () => (
         },
 
         headerBackImage: () => (
-          <FeatherIcon name="chevron-left" size={24} color="#ebeef8" />
+          <FeatherIcon name="chevron-left" size={24} color="#3D3D4D" />
         ),
       }}
       name="Cart"
